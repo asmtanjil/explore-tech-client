@@ -3,7 +3,9 @@ import { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -22,6 +24,10 @@ const Register = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        form.reset();
+        toast('You have Successfully Registered', {
+          icon: '👏',
+        });
       })
       .catch(error => console.error(error))
 
@@ -63,6 +69,11 @@ const Register = () => {
 
           <Button variant="primary" type="submit">Register</Button>
         </Form>
+        <div className='container'>
+          <Form.Text className="text-muted">
+            <small>Already have an account? Please, </small><Link to='/login'>Login</Link>
+          </Form.Text>
+        </div>
       </Col>
       <Col lg={3}>
 
