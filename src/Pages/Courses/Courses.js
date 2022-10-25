@@ -6,7 +6,6 @@ const Courses = () => {
     <Container>
       <Row>
         <Col lg={3}>
-
         </Col>
 
         <Col lg={9}>

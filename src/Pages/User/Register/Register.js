@@ -1,16 +1,38 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleCreateUser = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(name, photoURL, email, password)
+
+    createUser(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(error => console.error(error))
+
+  }
   return (
     <Row>
       <Col lg={3}>
 
       </Col>
       <Col lg={6}>
-        <Form className='container'>
+        <Form onSubmit={handleCreateUser} className='container'>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Full Name</Form.Label>

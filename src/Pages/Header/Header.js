@@ -2,11 +2,14 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import logo from '../../Assests/laptop.png'
+import Button from 'react-bootstrap/Button';
+
 
 const Header = () => {
   return (
-    <Navbar className='mb-4' collapseOnSelect expand="lg" bg="primary" variant="dark">
+    <Navbar className='mb-4' collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand>
           <img
@@ -16,24 +19,37 @@ const Header = () => {
             height="30"
             className="d-inline-block align-top me-2"
           />
-          Explore Tech
+          <Link to='/'>Explore Tech</Link>
         </Navbar.Brand>
-        {/* <Navbar.Brand>Explore Tech</Navbar.Brand> */}
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Courses</Nav.Link>
+            <Nav.Link>Courses</Nav.Link>
             <Nav.Link href="#pricing">Blogs</Nav.Link>
             <Nav.Link href="#pricing">FAQ</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link>Sign Up</Nav.Link>
-            <Nav.Link eventKey={2}>
+            <Link
+              to='/register'
+              style={{
+                paddingRight: 15,
+                textDecoration: 'none',
+                color: 'lightGray'
+              }}>
+              Sign Up
+            </Link>
+
+            <Link
+              to='/login'
+              style={{
+                paddingRight: 15,
+                textDecoration: 'none',
+                color: 'lightGray'
+              }}>
               Login
-            </Nav.Link>
-            <Nav.Link>
-              Log Out
-            </Nav.Link>
+            </Link>
+            <Button variant="outline-light">Log Out</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>
