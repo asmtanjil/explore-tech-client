@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,7 @@ const CardTopics = ({ courses }) => {
 
   return (
     <Card style={{ width: '75%' }}>
-      <Card.Img variant="top" src={image} style={{ marginTop: 10, padding: 5 }} />
+      <Image className='p-2' src={image}></Image>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>

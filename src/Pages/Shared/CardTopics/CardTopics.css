@@ -8,7 +8,8 @@
 
 @media screen and (max-width: 600px) {
   .cardTopic {
-    grid-template-columns: repeat(1, 1fr);
+    margin: 20px;
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 }

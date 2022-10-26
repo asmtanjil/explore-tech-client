@@ -1,12 +1,28 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'; import './CardDetails.css'
+import { FaRegFilePdf } from 'react-icons/fa';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const CardDetails = () => {
-  const allDetails = useLoaderData()
-  const { title, details, image, author } = allDetails;
+  const allDetails = useLoaderData();
+  const { title, details, image, author, price, id } = allDetails;
+
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+
+  const handleCheckOut = () => {
+    if (user) {
+      navigate(`/checkout/${id}`, { state: { title, id, price, } })
+    }
+    else {
+      navigate('/login');
+    }
+  }
   return (
     <div className='my-4'>
       <Container>
@@ -14,8 +30,7 @@ const CardDetails = () => {
           <Col lg={2}></Col>
           <Col lg={8}>
             <Card className="text-center">
-              <Card.Header>
-
+              <Card.Header className='headerCard'>
                 <div className='author'>
                   <Image roundedCircle src={author.img} style={{ height: 40 }}></Image>
                   <div className='author-detail'>
@@ -23,17 +38,17 @@ const CardDetails = () => {
                     <p>Released: {author.published_date}</p>
                   </div>
                 </div>
-
+                <FaRegFilePdf className='fs-3'></FaRegFilePdf>
               </Card.Header>
+
               <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Img variant="top" src={image} />
-                <Card.Text>
+                <Card.Title className='my-2'>{title}</Card.Title>
+                <Image className='my-2' src={image}></Image>
+                <Card.Text className='my-4'>
                   {details}
                 </Card.Text>
-                <Button variant="primary">Get Premium ACcess</Button>
+                <Button onClick={handleCheckOut} variant="primary">Pay {price} To Get Premium Access</Button>
               </Card.Body>
-              <Card.Footer className="text-muted">2 days ago</Card.Footer>
             </Card>
           </Col>
           <Col lg={2}></Col>

@@ -4,6 +4,7 @@ import Blog from "../../Pages/Blog/Blog";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
 import CardDetails from "../../Pages/Shared/CardDetails/CardDetails";
+import Checkout from "../../Pages/Shared/Checkout/Checkout";
 import Error from "../../Pages/Shared/Error/Error";
 import Login from "../../Pages/User/Login/Login";
 import Register from "../../Pages/User/Register/Register";
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
         path: '/login',
         element: <Login></Login>
       },
+      {
+        path: '/checkout/:id',
+        element: <Checkout></Checkout>
+      }
     ]
   },
   {
