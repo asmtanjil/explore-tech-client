@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -14,6 +14,8 @@ import Card from 'react-bootstrap/Card';
 const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const googleProvider = new GoogleAuthProvider()
   const githubProvider = new GithubAuthProvider()
@@ -30,6 +32,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        navigate('/')
       })
       .catch(error => {
         console.error(error);

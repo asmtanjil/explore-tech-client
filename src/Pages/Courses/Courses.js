@@ -10,14 +10,6 @@ const Courses = () => {
     <Container>
       <Row>
         <Col lg={3}>
-          {/* {
-            allCourse.map(courses =>
-              <CardTitle
-                key={courses.id}
-                courses={courses}
-              >
-              </CardTitle>)
-          } */}
           <CardTitle></CardTitle>
 
         </Col>

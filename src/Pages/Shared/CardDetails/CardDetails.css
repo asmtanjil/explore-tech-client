@@ -17,3 +17,7 @@
 .author-detail p {
   margin-bottom: 0;
 }
+
+.textJustify {
+  text-align: justify;
+}

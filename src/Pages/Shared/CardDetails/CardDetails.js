@@ -9,7 +9,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const CardDetails = () => {
   const allDetails = useLoaderData();
-  const { title, details, image, author, price, id } = allDetails;
+  const { title, details, image, author, price, id, note } = allDetails;
 
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const CardDetails = () => {
 
   const handleCheckOut = () => {
     if (user) {
-      navigate(`/checkout/${id}`, { state: { title, id, price, } })
+      navigate(`/checkout/${id}`, { state: { title, id, price } })
     }
     else {
       navigate('/login');
@@ -42,9 +42,10 @@ const CardDetails = () => {
               </Card.Header>
 
               <Card.Body>
-                <Card.Title className='my-2'>{title}</Card.Title>
+                <Card.Title className='my-2 p-2 bg-light rounded'>{title}</Card.Title>
                 <Image className='my-2' src={image}></Image>
-                <Card.Text className='my-4'>
+                <h5 className='my-2 p-2 bg-light rounded'>{note}</h5>
+                <Card.Text className='textJustify my-4'>
                   {details}
                 </Card.Text>
                 <Button onClick={handleCheckOut} variant="primary">Pay {price} To Get Premium Access</Button>

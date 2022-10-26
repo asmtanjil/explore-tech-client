@@ -6,23 +6,22 @@ import { Link } from 'react-router-dom';
 import './CardTopics.css'
 
 const CardTopics = ({ courses }) => {
-  const { title, details, image } = courses;
+  const { title, details, image, id } = courses;
 
   return (
     <Card style={{ width: '75%' }}>
       <Image className='p-2' src={image}></Image>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Text>
+        <Card.Text className='textJustify'>
           {
-            details.length > 150 ?
-              <>{details.slice(0, 150) + '...'} <Link>Read More</Link>
-              </>
+            details.length > 250 ?
+              <>{details.slice(0, 250) + '...'}</>
               :
               <>{details}</>
           }
         </Card.Text>
-        <Link to='/'>
+        <Link to={`/details/${id}`}>
           <Button variant="primary">Details</Button>
         </Link>
       </Card.Body>

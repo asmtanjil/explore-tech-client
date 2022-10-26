@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../Assests/laptop.png'
+import logo from '../../Assets/laptop.png'
 import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
