@@ -6,9 +6,11 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState('')
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -24,12 +26,16 @@ const Register = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        setError('')
         form.reset();
         toast('You have Successfully Registered', {
           icon: '👏',
         });
       })
-      .catch(error => console.error(error))
+      .catch(error => {
+        console.error(error);
+        setError(error.message)
+      })
 
   }
   return (
@@ -63,7 +69,7 @@ const Register = () => {
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
             <Form.Text className="text-muted">
-
+              {error}
             </Form.Text>
           </Form.Group>
 

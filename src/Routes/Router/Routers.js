@@ -3,6 +3,8 @@ import Main from "../../Layouts/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Courses from "../../Pages/Courses/Courses";
 import Home from "../../Pages/Home/Home";
+import CardDetails from "../../Pages/Shared/CardDetails/CardDetails";
+import Error from "../../Pages/Shared/Error/Error";
 import Login from "../../Pages/User/Login/Login";
 import Register from "../../Pages/User/Register/Register";
 
@@ -17,7 +19,18 @@ export const router = createBrowserRouter([
       },
       {
         path: '/courses',
-        element: <Courses></Courses>
+        element: <Courses></Courses>,
+        loader: () => fetch('http://localhost:5000/allCourse')
+      },
+      // {
+      //   path: '/course/:id',
+      //   element: <CardTitle></CardTitle>,
+      //   loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+      // },
+      {
+        path: '/details/:id',
+        element: <CardDetails></CardDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`)
       },
       {
         path: '/blog',
@@ -32,5 +45,9 @@ export const router = createBrowserRouter([
         element: <Login></Login>
       },
     ]
+  },
+  {
+    path: '*',
+    element: <Error></Error>
   }
 ])

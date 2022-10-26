@@ -1,0 +1,10 @@
+.author {
+  display: flex;
+  gap: 10px;
+}
+
+.author-detail {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}

@@ -11,7 +11,6 @@ import { Image } from 'react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 
 
-
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
