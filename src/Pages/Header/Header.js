@@ -15,7 +15,7 @@ import { FaUser } from 'react-icons/fa';
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  //Sign out
+  //Sign out From Site
   const handleSignOut = () => {
     logOut()
       .then(() => { })
@@ -27,7 +27,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand>
           <img alt="" src={logo} width="30" height="30" className="d-inline-block align-top me-2" />
-          <NavLink to='/' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Explore Tech</NavLink>
+          <NavLink to='/' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Explore-Tech</NavLink>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -53,7 +53,7 @@ const Header = () => {
             }
             {
               user?.photoURL ?
-                <Image data-tip={user?.displayName} src={user?.photoURL} roundedCircle style={{ height: 40 }}></Image>
+                <Image data-iscapture="true" data-tip={user?.displayName} src={user?.photoURL} roundedCircle style={{ height: 40 }}></Image>
                 :
                 <><FaUser></FaUser></>
             }

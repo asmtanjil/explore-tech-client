@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useLoaderData } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Checkout = () => {
@@ -13,8 +12,8 @@ const Checkout = () => {
 
   return (
     <div className='container'>
-      <h4>Welcome <span>{user?.displayName} to our Site for willing to Learn with us.</span></h4>
-      <p>{title}</p>
+      <h3 className='bg-success text-light p-2 '>{title}</h3>
+      <h5>Welcome <span className='fw-bold'>{user?.displayName}</span><span> to our Site for willing to Learn with us.</span></h5>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Your Contact Info</Form.Label>
@@ -26,9 +25,7 @@ const Checkout = () => {
           <Form.Control type="text" placeholder="Address" />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Button variant="primary" type="submit">Make Payment</Button>
       </Form>
     </div>
   );

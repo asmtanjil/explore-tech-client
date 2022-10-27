@@ -10,6 +10,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -58,6 +59,7 @@ const AuthProvider = ({ children }) => {
 
   }, [])
 
+  //Auth Provider Value
   const authInfo = {
     user,
     loading,
@@ -67,6 +69,7 @@ const AuthProvider = ({ children }) => {
     githubSignIn,
     logOut
   }
+
   return (
     <AuthContext.Provider value={authInfo}>
       {children}

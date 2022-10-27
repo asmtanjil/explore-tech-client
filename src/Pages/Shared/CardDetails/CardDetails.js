@@ -4,6 +4,9 @@ import { Col, Container, Image, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'; import './CardDetails.css'
 import { FaRegFilePdf } from 'react-icons/fa';
+import ReactToPdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const CardDetails = () => {
   const allDetails = useLoaderData();
@@ -11,16 +14,18 @@ const CardDetails = () => {
 
   const navigate = useNavigate();
 
-
+  //Dynamic Route For Premium Access
   const handleCheckOut = () => {
     navigate(`/checkout/${id}`, { state: { title, id, price } })
   }
+
   return (
     <div className='my-4'>
       <Container>
         <Row>
           <Col lg={2}></Col>
-          <Col lg={8}>
+
+          <Col ref={ref} lg={8}>
             <Card className="text-center">
               <Card.Header className='headerCard'>
                 <div className='author'>
@@ -30,12 +35,23 @@ const CardDetails = () => {
                     <p>Released: {author.published_date}</p>
                   </div>
                 </div>
-                <FaRegFilePdf className='fs-3'></FaRegFilePdf>
+
+                <div>
+                  <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                    {({ toPdf }) => (
+                      <button onClick={toPdf}>
+                        <FaRegFilePdf className='fs-3'></FaRegFilePdf>
+                      </button>
+                    )}
+                  </ReactToPdf>
+
+                </div>
+
               </Card.Header>
 
               <Card.Body>
                 <Card.Title className='my-2 p-2 bg-light rounded'>{title}</Card.Title>
-                <Image className='my-2' src={image} style={{ width: '90%' }}></Image>
+                <Image className='my-2' src={image} style={{ width: '75%' }}></Image>
                 <h5 className='my-2 p-2 bg-light rounded'>{note}</h5>
                 <Card.Text className='textJustify my-4'>
                   {details}

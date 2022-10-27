@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CardTitle = () => {
   const [categories, setCategories] = useState([])
 
-  //Data Load For Course Name in LeftSide Bar
+  //Data Loaded For Course Name in LeftSide Bar
   useEffect(() => {
     fetch('http://localhost:5000/course-title')
       .then(res => res.json())
@@ -15,8 +15,8 @@ const CardTitle = () => {
     <div>
       {
         categories.map(category => <p key={category.id}>
-          <Link to={`/details/${category.id}`}>
-            {category.name}
+          <Link style={{ textDecoration: 'none' }} to={`/details/${category.id}`}>
+            <span className='fs-4'>{category.name}</span>
           </Link>
         </p>)
       }
