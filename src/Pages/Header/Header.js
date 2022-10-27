@@ -10,10 +10,18 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import { Image } from 'react-bootstrap';
 import ReactTooltip from 'react-tooltip';
 import { FaUser } from 'react-icons/fa';
+import { useState } from 'react';
+import { BsToggleOn, BsToggleOff } from 'react-icons/bs';
 
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [toggle, setToggle] = useState(false)
+
+  //Toggler Handler
+  const handleToggler = () => {
+    setToggle(!toggle)
+  }
 
   //Sign out From Site
   const handleSignOut = () => {
@@ -58,6 +66,15 @@ const Header = () => {
                 <><FaUser></FaUser></>
             }
 
+          </Nav>
+          <Nav className='ms-2'>
+            <Nav.Link onClick={handleToggler} as={Link}>
+              {toggle ? (
+                <Button variant="light">Light</Button>
+              ) : (
+                <Button variant="dark">Dark</Button>
+              )}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -37,14 +37,13 @@ const CardDetails = () => {
                 </div>
 
                 <div>
-                  <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                  <ReactToPdf targetRef={ref} filename="Course-Detail.pdf">
                     {({ toPdf }) => (
                       <button onClick={toPdf}>
                         <FaRegFilePdf className='fs-3'></FaRegFilePdf>
                       </button>
                     )}
                   </ReactToPdf>
-
                 </div>
 
               </Card.Header>

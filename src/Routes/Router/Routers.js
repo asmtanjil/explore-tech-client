@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
         path: '/checkout/:id',
         element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
         loader: ({ params }) => fetch(`https://explore-tech-server.vercel.app/details/${params.id}`)
-      }
+      },
     ]
   },
   {
