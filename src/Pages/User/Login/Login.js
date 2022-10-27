@@ -24,7 +24,7 @@ const Login = () => {
   const githubProvider = new GithubAuthProvider()
 
   //Sign In With Email And Password
-  const handleSignIn = (event) => {
+  const handleSignIn = event => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -50,6 +50,8 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        setError('')
+        navigate(from, { replace: true })
       })
       .catch(error => {
         console.error(error);
@@ -63,6 +65,8 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        setError('')
+        navigate(from, { replace: true })
       })
       .catch(error => {
         console.error(error);

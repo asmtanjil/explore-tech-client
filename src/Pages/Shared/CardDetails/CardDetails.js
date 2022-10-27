@@ -4,8 +4,6 @@ import { Col, Container, Image, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'; import './CardDetails.css'
 import { FaRegFilePdf } from 'react-icons/fa';
-import { useContext } from 'react';
-import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const CardDetails = () => {
   const allDetails = useLoaderData();
@@ -37,7 +35,7 @@ const CardDetails = () => {
 
               <Card.Body>
                 <Card.Title className='my-2 p-2 bg-light rounded'>{title}</Card.Title>
-                <Image className='my-2' src={image}></Image>
+                <Image className='my-2' src={image} style={{ width: '90%' }}></Image>
                 <h5 className='my-2 p-2 bg-light rounded'>{note}</h5>
                 <Card.Text className='textJustify my-4'>
                   {details}

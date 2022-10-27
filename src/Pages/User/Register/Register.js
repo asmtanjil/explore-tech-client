@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
@@ -11,6 +11,8 @@ import { useState } from 'react';
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [error, setError] = useState('')
+
+  const navigate = useNavigate()
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -31,6 +33,7 @@ const Register = () => {
         toast('You have Successfully Registered', {
           icon: '👏',
         });
+        navigate('/login')
       })
       .catch(error => {
         console.error(error);

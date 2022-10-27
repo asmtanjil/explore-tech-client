@@ -9,6 +9,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { Image } from 'react-bootstrap';
 import ReactTooltip from 'react-tooltip';
+import { FaUser } from 'react-icons/fa';
 
 
 const Header = () => {
@@ -54,7 +55,7 @@ const Header = () => {
               user?.photoURL ?
                 <Image data-tip={user?.displayName} src={user?.photoURL} roundedCircle style={{ height: 40 }}></Image>
                 :
-                <></>
+                <><FaUser></FaUser></>
             }
 
           </Nav>
