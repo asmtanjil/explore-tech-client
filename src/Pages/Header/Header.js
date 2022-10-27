@@ -39,30 +39,34 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Navbar.Brand>
+            <Nav>
               <NavLink to='/courses' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Courses</NavLink>
               <NavLink to='/blog' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Blogs</NavLink>
               <NavLink to='/blog' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>FAQ</NavLink>
-            </Navbar.Brand>
+            </Nav>
           </Nav>
           <Nav>
-            {
-              user?.uid ?
-                <>
-                  <Button className='me-2' onClick={handleSignOut} variant="outline-light">Log Out</Button>
-                </>
-                :
-                <>
-                  <Link to='/register' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Sign Up</Link>
-                  <Link to='/login' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Login</Link>
-                </>
-            }
-            {
-              user?.photoURL ?
-                <Image src={user?.photoURL} title={user?.displayName} roundedCircle style={{ height: 40 }}></Image>
-                :
-                <><FaUser></FaUser></>
-            }
+            <NavLink style={{ textDecoration: 'none' }}>
+              {
+                user?.uid ?
+                  <>
+                    <Button className='me-2' onClick={handleSignOut} variant="outline-light">Log Out</Button>
+                  </>
+                  :
+                  <>
+                    <Link to='/register' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Sign Up</Link>
+                    <Link to='/login' style={{ paddingRight: 15, textDecoration: 'none', color: 'white' }}>Login</Link>
+                  </>
+              }
+            </NavLink>
+            <NavLink style={{ textDecoration: 'none' }}>
+              {
+                user?.photoURL ?
+                  <Image src={user?.photoURL} title={user?.displayName} roundedCircle style={{ height: 40 }}></Image>
+                  :
+                  <><FaUser></FaUser></>
+              }
+            </NavLink>
 
           </Nav>
           <Nav className='ms-2'>
