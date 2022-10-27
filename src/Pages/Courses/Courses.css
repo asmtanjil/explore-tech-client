@@ -1,0 +1,21 @@
+.cardTopic {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .cardTopic {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card-body {
+    width: 100%;
+  }
+
+}

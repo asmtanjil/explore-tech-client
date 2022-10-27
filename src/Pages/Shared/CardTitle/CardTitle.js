@@ -7,7 +7,7 @@ const CardTitle = () => {
 
   //Data Loaded For Course Name in LeftSide Bar
   useEffect(() => {
-    fetch('http://localhost:5000/course-title')
+    fetch('https://explore-tech-server.vercel.app/course-title')
       .then(res => res.json())
       .then(data => setCategories(data))
   }, [])

@@ -9,7 +9,7 @@ const CardTopics = ({ courses }) => {
   const { title, details, image, id } = courses;
 
   return (
-    <Card style={{ width: '75%' }}>
+    <Card className='card-body'>
       <Image className='p-2' src={image}></Image>
       <Card.Body>
         <Card.Title>{title}</Card.Title>

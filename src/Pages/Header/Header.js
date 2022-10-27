@@ -53,7 +53,7 @@ const Header = () => {
             }
             {
               user?.photoURL ?
-                <Image data-iscapture="true" data-tip={user?.displayName} src={user?.photoURL} roundedCircle style={{ height: 40 }}></Image>
+                <Image data-iscapture="true" title={user?.displayName} src={user?.photoURL} roundedCircle style={{ height: 40 }}></Image>
                 :
                 <><FaUser></FaUser></>
             }

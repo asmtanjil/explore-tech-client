@@ -1,15 +1,10 @@
-.cardTopic {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.card-body {
+  width: 90%;
 }
 
 @media screen and (max-width: 600px) {
-  .cardTopic {
-    margin: auto;
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .card-body {
+    width: 100%;
   }
+
 }

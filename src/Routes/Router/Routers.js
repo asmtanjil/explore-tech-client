@@ -22,12 +22,12 @@ export const router = createBrowserRouter([
       {
         path: '/courses',
         element: <Courses></Courses>,
-        loader: () => fetch('http://localhost:5000/allCourse')
+        loader: () => fetch('https://explore-tech-server.vercel.app/allCourse')
       },
       {
         path: '/details/:id',
         element: <CardDetails></CardDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`)
+        loader: ({ params }) => fetch(`https://explore-tech-server.vercel.app/details/${params.id}`)
       },
       {
         path: '/blog',
@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
       {
         path: '/checkout/:id',
         element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`)
+        loader: ({ params }) => fetch(`https://explore-tech-server.vercel.app/details/${params.id}`)
       }
     ]
   },

@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import CardTitle from '../Shared/CardTitle/CardTitle';
 import CardTopics from '../Shared/CardTopics/CardTopics';
+import './Courses.css'
 
 const Courses = () => {
   const allCourse = useLoaderData();
