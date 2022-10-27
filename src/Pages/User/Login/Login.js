@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -16,6 +16,9 @@ const Login = () => {
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const googleProvider = new GoogleAuthProvider()
   const githubProvider = new GithubAuthProvider()
@@ -32,7 +35,8 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        navigate('/')
+        setError('')
+        navigate(from, { replace: true })
       })
       .catch(error => {
         console.error(error);
@@ -47,7 +51,10 @@ const Login = () => {
         const user = result.user;
         console.log(user);
       })
-      .catch(error => console.error(error))
+      .catch(error => {
+        console.error(error);
+        setError(error.message);
+      })
   }
 
   //Sign In With Github
@@ -57,7 +64,10 @@ const Login = () => {
         const user = result.user;
         console.log(user);
       })
-      .catch(error => console.error(error))
+      .catch(error => {
+        console.error(error);
+        setError(error.message);
+      })
   }
 
   return (

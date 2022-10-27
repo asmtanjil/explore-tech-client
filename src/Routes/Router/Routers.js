@@ -8,6 +8,7 @@ import Checkout from "../../Pages/Shared/Checkout/Checkout";
 import Error from "../../Pages/Shared/Error/Error";
 import Login from "../../Pages/User/Login/Login";
 import Register from "../../Pages/User/Register/Register";
+import PrivateRoute from "../PrivateRouter/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/checkout/:id',
-        element: <Checkout></Checkout>
+        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
       }
     ]
   },

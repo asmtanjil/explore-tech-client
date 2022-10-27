@@ -2,16 +2,15 @@ import React from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Checkout = () => {
   const { user } = useContext(AuthContext)
-  const location = useLocation();
-  const { price, title } = location.state
+  // const location = useLocation();
+  // const { title } = location.state;
   return (
     <div className='container'>
-      <p>{title}</p>
       <h4>Welcome <span>{user?.displayName} to our Site for willing to Learn with us.</span></h4>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">

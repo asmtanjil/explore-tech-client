@@ -11,17 +11,11 @@ const CardDetails = () => {
   const allDetails = useLoaderData();
   const { title, details, image, author, price, id, note } = allDetails;
 
-  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
 
   const handleCheckOut = () => {
-    if (user) {
-      navigate(`/checkout/${id}`, { state: { title, id, price } })
-    }
-    else {
-      navigate('/login');
-    }
+    navigate(`/checkout/${id}`, { state: { title, id, price } })
   }
   return (
     <div className='my-4'>
