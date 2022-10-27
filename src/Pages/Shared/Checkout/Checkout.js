@@ -14,6 +14,7 @@ const Checkout = () => {
     <div className='container'>
       <h3 className='bg-success text-light p-2 '>{title}</h3>
       <h5>Welcome <span className='fw-bold'>{user?.displayName}</span><span> to our website for willing to Learn with us.</span></h5>
+
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Your Contact Info</Form.Label>

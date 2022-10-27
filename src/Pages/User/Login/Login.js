@@ -112,8 +112,6 @@ const Login = () => {
             <small>Are you a new user? Please, </small><Link to='/register'>Register</Link>
           </Card.Body>
         </Card>
-
-        {/* <p>Forgot Password?, Please <Button variant="outline-dark">Reset Password</Button></p> */}
       </Col>
 
       <Col lg={3}> </Col>

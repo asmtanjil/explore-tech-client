@@ -8,10 +8,8 @@ import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { Image } from 'react-bootstrap';
-import ReactTooltip from 'react-tooltip';
 import { FaUser } from 'react-icons/fa';
 import { useState } from 'react';
-import { BsToggleOn, BsToggleOff } from 'react-icons/bs';
 
 
 const Header = () => {
@@ -61,7 +59,7 @@ const Header = () => {
             }
             {
               user?.photoURL ?
-                <Image data-iscapture="true" title={user?.displayName} src={user?.photoURL} roundedCircle style={{ height: 40 }}></Image>
+                <Image src={user?.photoURL} title={user?.displayName} roundedCircle style={{ height: 40 }}></Image>
                 :
                 <><FaUser></FaUser></>
             }
@@ -78,7 +76,6 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <ReactTooltip />
     </Navbar>
 
   );
