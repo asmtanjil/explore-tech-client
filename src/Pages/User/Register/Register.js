@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 import { useState } from 'react';
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState('')
 
   const navigate = useNavigate()
@@ -30,6 +30,7 @@ const Register = () => {
         console.log(user);
         setError('')
         form.reset();
+        updateUserProfile(name, photoURL)
         toast('You have Successfully Registered', {
           icon: '👏',
         });
