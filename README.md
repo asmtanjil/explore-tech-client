@@ -10,8 +10,8 @@ Visit Directly through this Live Site Link Of my Project [Explore-Tech](https://
 
 ### `Technology I used For This Website`
 
- * React-Bootstrap
  * Bootstrap
+ * React-Bootstrap
  * CSS
  * JavScript
  * API
@@ -19,4 +19,4 @@ Visit Directly through this Live Site Link Of my Project [Explore-Tech](https://
  * Express JS
  * Node Package Manager
  * React Icons
- * 
+ * JSX
