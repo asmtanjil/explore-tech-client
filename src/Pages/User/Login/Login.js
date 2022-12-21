@@ -8,7 +8,6 @@ import { AuthContext } from '../../../Contexts/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { useState } from 'react';
-import Card from 'react-bootstrap/Card';
 
 
 const Login = () => {
@@ -91,27 +90,31 @@ const Login = () => {
           <Form.Text className="text-danger d-block mb-3">
             {error}
           </Form.Text>
-          <div className="d-grid gap-2">
+
+          {/* <div className="d-grid gap-2">
             <Button className='me-3' variant="primary" type="submit">Login</Button>
-          </div>
+          </div> */}
+          <Button variant="primary" type="submit">Login</Button>
+
         </Form>
 
-        <div className='container my-3'>
-          <Button onClick={handleGoogleSignIn} className='m-2' variant="outline-primary">
+        <div className='container'>
+          <Form.Text className="text-muted">
+            Are you a new user? Please, <Link to='/register'>Register</Link>
+          </Form.Text>
+        </div>
+
+        <div className='container my-3 d-flex flex-column gap-2'>
+          <Button onClick={handleGoogleSignIn} className='me-2' variant="primary">
             <FaGoogle className='me-2'></FaGoogle>
             Login With Google
           </Button>
-          <Button onClick={handleGithubSignIn} className='m-2' variant="outline-dark">
+          <Button onClick={handleGithubSignIn} className='me-2' variant="dark">
             <FaGithub className='me-2'></FaGithub>
             Login With Github
           </Button>
         </div>
 
-        <Card>
-          <Card.Body>
-            <small>Are you a new user? Please, </small><Link to='/register'>Register</Link>
-          </Card.Body>
-        </Card>
       </Col>
 
       <Col lg={3}> </Col>

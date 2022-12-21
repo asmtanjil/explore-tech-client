@@ -1,11 +1,5 @@
 import React from 'react';
 import './Home.css';
-import imageI from '../../Assets/laptopBG.jpg';
-import imageII from '../../Assets/art.jpg';
-import imageIII from '../../Assets/codeLife.jpg';
-import imageIV from '../../Assets/lp-1.jpg';
-import imageV from '../../Assets/lpBgI.jpg';
-import imageVI from '../../Assets/lpBgII.jpg';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -35,12 +29,12 @@ const Home = () => {
           </Col>
           <Col lg={8}>
             <div className='img-container'>
-              <Image src={imageI}></Image>
-              <Image src={imageII}></Image>
-              <Image src={imageIII}></Image>
-              <Image src={imageIV}></Image>
-              <Image src={imageV}></Image>
-              <Image src={imageVI}></Image>
+              <Image src="https://i.ibb.co/4VVJn7k/lpBgI.png"></Image>
+              <Image src="https://i.ibb.co/VxVDPj9/lp-1.png"></Image>
+              <Image src="https://i.ibb.co/bWQwBYC/codeLife.png"></Image>
+              <Image src="https://i.ibb.co/X5r5rRG/laptopBG.jpg"></Image>
+              <Image src="https://i.ibb.co/ZV20Ny3/art.jpg"></Image>
+              <Image src="https://i.ibb.co/N9Hgwpd/lpBgII.jpg"></Image>
             </div>
           </Col>
           <Col className='pt-4' lg={2}>

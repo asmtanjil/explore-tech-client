@@ -37,7 +37,7 @@ const CardDetails = () => {
                 </div>
 
                 <div>
-                  <ReactToPdf targetRef={ref} filename="Course-Detail.pdf">
+                  <ReactToPdf targetRef={ref} filename="Course-Details.pdf">
                     {({ toPdf }) => (
                       <button onClick={toPdf}>
                         <FaRegFilePdf className='fs-3'></FaRegFilePdf>
@@ -49,16 +49,17 @@ const CardDetails = () => {
               </Card.Header>
 
               <Card.Body>
-                <Card.Title className='my-2 p-2 bg-light rounded'>{title}</Card.Title>
+                <Card.Title className='my-4 p-2 fw-bold'>{title}</Card.Title>
                 <Image className='my-2' src={image} style={{ width: '75%' }}></Image>
-                <h5 className='my-2 p-2 bg-light rounded'>{note}</h5>
+                <Card.Title className='my-4 p-2 fw-semibold'>{note}</Card.Title>
                 <Card.Text className='textJustify my-4'>
                   {details}
                 </Card.Text>
-                <Button onClick={handleCheckOut} variant="primary">Pay {price} To Get Premium Access</Button>
+                <Button onClick={handleCheckOut} variant="primary">Get Premium Access</Button>
               </Card.Body>
             </Card>
           </Col>
+
           <Col lg={2}></Col>
         </Row>
       </Container>

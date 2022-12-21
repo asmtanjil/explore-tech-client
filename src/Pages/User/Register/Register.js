@@ -71,7 +71,7 @@ const Register = () => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Text >
+            <Form.Text className='text-danger'>
               {error}
             </Form.Text>
           </Form.Group>
@@ -80,7 +80,7 @@ const Register = () => {
         </Form>
         <div className='container'>
           <Form.Text className="text-muted">
-            <small>Already have an account? Please, </small><Link to='/login'>Login</Link>
+            Already have an account? Please, <Link to='/login'>Login</Link>
           </Form.Text>
         </div>
       </Col>
