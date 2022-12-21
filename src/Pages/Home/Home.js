@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className='container-fluid body'>
       <Container>
-        <div className='description'>
+        <div className='description fs-5'>
           <h4>Why Do Designers Need a Web Design Portfolio?</h4>
           <p>There are many indisputable reasons why every web designer needs a killer web design portfolio in order to put his best foot forward and get hired for the web design projects he has equipped himself to master. This is true not only for establishing his own credibility, but also for increasing his likelihood of getting hired for promising, high-caliber projects.</p>
         </div>
